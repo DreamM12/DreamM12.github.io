@@ -1,529 +1,120 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>SUKOL T-TIME — Web Alarm</title>
-<style>
-  :root{
-    --bg:#0f1724; --card:rgba(255,255,255,0.04); --accent:#6ff;
-    --muted:#9aa6b2; --glass: rgba(255,255,255,0.03);
-    --radius:14px;
-  }
-  html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;}
-  body{background:linear-gradient(180deg,#071023 0%, #0f1724 100%); color:#e6f0f6; display:flex;align-items:flex-start;justify-content:center;padding:28px;}
-  .app{
-    width:100%; max-width:980px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    border-radius:18px; padding:20px; box-shadow:0 10px 40px rgba(2,6,23,0.7); backdrop-filter: blur(8px);
-  }
-  header{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-bottom:16px}
-  .brand{display:flex;gap:12px;align-items:center}
-  .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#2ce6ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#042;box-shadow:0 4px 18px rgba(102,255,255,0.06)}
-  h1{font-size:18px;margin:0}
-  .subtitle{font-size:12px;color:var(--muted)}
-  .controls{display:flex;gap:10px;align-items:center}
-  button, .btn {
-    background:var(--accent); color:#042; border:none; padding:8px 12px;border-radius:10px;font-weight:600;cursor:pointer;
-    box-shadow:0 6px 18px rgba(102,255,255,0.07);
-  }
-  .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:8px 12px;border-radius:10px}
-  main{display:grid;grid-template-columns: 1fr 360px; gap:18px;}
-  @media(max-width:880px){ main{grid-template-columns:1fr; } .right {order:2} }
-  /* left column */
-  .panel{background:var(--card);padding:14px;border-radius:var(--radius);box-shadow:inset 0 1px 0 rgba(255,255,255,0.02)}
-  .clock-row{display:flex;align-items:center;justify-content:space-between;gap:12px}
-  .clock{font-size:40px;font-weight:700;letter-spacing:1px}
-  .small{font-size:13px;color:var(--muted)}
-  /* add alarm form */
-  form#alarmForm{display:flex;flex-direction:column;gap:8px;margin-top:12px}
-  .row{display:flex;gap:8px;align-items:center}
-  input[type=time], input[type=text], select, input[type=number]{
-    padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;font-size:14px;outline:none;
-  }
-  label.small{font-size:13px;color:var(--muted);display:block;margin-bottom:4px}
-  /* list */
-  .alarms-list{margin-top:12px;display:flex;flex-direction:column;gap:8px;max-height:420px;overflow:auto;padding-right:6px}
-  .alarm-item{display:flex;align-items:center;justify-content:space-between;padding:10px;border-radius:12px;background:var(--glass);border:1px solid rgba(255,255,255,0.02)}
-  .alarm-left{display:flex;gap:12px;align-items:center}
-  .time-badge{font-weight:700;font-size:18px}
-  .meta{font-size:12px;color:var(--muted)}
-  .switch{appearance:none;width:44px;height:26px;background:rgba(255,255,255,0.06);border-radius:20px;position:relative;cursor:pointer;outline:none}
-  .switch:checked{background:linear-gradient(90deg,var(--accent),#3cecbf)}
-  .switch::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#042;transition:all .18s}
-  .switch:checked::after{left:21px}
-  /* right column */
-  .right{display:flex;flex-direction:column;gap:12px}
-  .note{font-size:13px;color:var(--muted);line-height:1.45}
-  ul{padding-left:18px}
-  footer{margin-top:18px;font-size:12px;color:var(--muted);text-align:center}
-  .danger{background:#ff6b6b;color:#fff}
-  audio{display:none}
-</style>
+  <meta charset="UTF-8">
+  <title>💕 Fern & Jess — Our Love Story 💕</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #ffd6e8, #ffffff);
+      font-family: "Segoe UI", sans-serif;
+      color: #ff4d88;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-top: 40px;
+      font-weight: bold;
+      color: #ff2e75;
+    }
+    h2 {
+      font-size: 1.5rem;
+      color: #ff4d88;
+    }
+    p {
+      max-width: 700px;
+      margin: 20px auto;
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+    }
+    .heart {
+      font-size: 2rem;
+      animation: heartbeat 1.5s infinite;
+    }
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      25% { transform: scale(1.2); }
+      50% { transform: scale(1); }
+      75% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    .date {
+      font-size: 1.1rem;
+      color: #ff6fa1;
+      margin-top: 10px;
+    }
+    .love-box {
+      background: rgba(255, 255, 255, 0.7);
+      padding: 30px;
+      margin: 30px auto;
+      max-width: 600px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+    }
+    button {
+      background-color: #ff4d88;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 15px;
+    }
+    button:hover {
+      background-color: #ff2e75;
+      transform: scale(1.05);
+    }
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #ff2e75;
+    }
+  </style>
 </head>
 <body>
-  <div class="app" role="application" aria-label="SUKOL T-TIME Alarm">
-    <header>
-      <div class="brand">
-        <div class="logo">T</div>
-        <div>
-          <h1>SUKOL T-TIME</h1>
-          <div class="subtitle">ตั้งปลุก — Web Alarm (ใช้ได้บนมือถือ/เดสก์ท็อป ขณะที่หน้าเปิดอยู่)</div>
-        </div>
-      </div>
+  <h1>💕 Fern & Jess 💕</h1>
+  <div class="date">Together since: 16 / 05 / 2025 — 4 months of love 💖</div>
 
-      <div class="controls">
-        <button id="requestPermBtn" class="btn">ขออนุญาตแจ้งเตือน</button>
-        <button id="toggleDark" class="btn-ghost">Dark</button>
-      </div>
-    </header>
-
-    <main>
-      <!-- LEFT -->
-      <section class="panel left">
-        <div class="clock-row">
-          <div>
-            <div class="clock" id="clockDisplay">--:--:--</div>
-            <div class="small" id="dateDisplay">--</div>
-          </div>
-          <div style="text-align:right">
-            <div class="small">สถานะแบตเตอรี่</div>
-            <div id="batteryDisplay" style="font-weight:700">--%</div>
-          </div>
-        </div>
-
-        <div style="margin-top:12px">
-          <div class="small">ตั้งปลุกใหม่</div>
-          <form id="alarmForm">
-            <label class="small">เวลา (เลือก)</label>
-            <input type="time" id="alarmTime" required />
-            <label class="small">ชื่อปลุก (เช่น ตื่นเช้า)</label>
-            <input type="text" id="alarmLabel" placeholder="ชื่อปลุก..." />
-
-            <div class="row">
-              <div style="flex:1">
-                <label class="small">ซ้ำ (เลือกวัน)</label>
-                <select id="repeatDays" multiple size="3" style="width:100%;height:86px">
-                  <option value="0">อาทิตย์</option>
-                  <option value="1">จันทร์</option>
-                  <option value="2">อังคาร</option>
-                  <option value="3">พุธ</option>
-                  <option value="4">พฤหัส</option>
-                  <option value="5">ศุกร์</option>
-                  <option value="6">เสาร์</option>
-                </select>
-                <div class="small">(ใช้ Ctrl/Command แตะเพื่อเลือกหลายวัน หรือปล่อยว่างสำหรับครั้งเดียว)</div>
-              </div>
-            </div>
-
-            <div class="row" style="justify-content:space-between;margin-top:8px">
-              <div>
-                <label class="small">Snooze (นาที)</label>
-                <input type="number" id="snoozeMinutes" value="5" min="1" style="width:100px" />
-              </div>
-              <div>
-                <label class="small">เสียง</label>
-                <select id="soundSelect">
-                  <option value="beep">Beep</option>
-                  <option value="chime">Chime</option>
-                  <option value="alarm">Classic Alarm</option>
-                </select>
-              </div>
-            </div>
-
-            <div style="display:flex;gap:8px;margin-top:10px">
-              <button type="submit" class="btn">บันทึกปลุก</button>
-              <button type="button" id="clearForm" class="btn-ghost">ยกเลิก</button>
-            </div>
-          </form>
-        </div>
-
-        <div style="margin-top:18px">
-          <div class="small">รายการปลุกที่ตั้งไว้</div>
-          <div class="alarms-list" id="alarmsList" aria-live="polite"></div>
-        </div>
-      </section>
-
-      <!-- RIGHT -->
-      <aside class="right">
-        <div class="panel">
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <div>
-              <div class="small">สภาพอากาศ (ตำแหน่งของคุณ)</div>
-              <div id="weatherInfo">โหลดข้อมูลสภาพอากาศ...</div>
-            </div>
-            <div style="text-align:right">
-              <div class="small">โหมด</div>
-              <div id="modeLabel">Ready</div>
-            </div>
-          </div>
-          <hr style="border:none;height:1px;background:rgba(255,255,255,0.02);margin:12px 0" />
-          <div class="note">หมายเหตุ: ถ้าปิดหน้าเว็บหรือแท็บ บางเบราว์เซอร์อาจหยุดวินาที/เวลาตรวจสอบ — วิธีที่แน่นอนที่สุดสำหรับการปลุกแม้ปิดเบราว์เซอร์คือสร้างแอป native หรือใช้ Push Service + Service Worker</div>
-        </div>
-
-        <div class="panel">
-          <div class="small">การกระทำด่วน</div>
-          <div style="display:flex;gap:8px;margin-top:8px">
-            <button id="snoozeAll" class="btn-ghost">Snooze ทุกปลุก (5m)</button>
-            <button id="stopAll" class="btn danger">หยุดทุกปลุก</button>
-          </div>
-        </div>
-
-        <div class="panel">
-          <div class="small">ข้อมูลเทคนิค</div>
-          <ul>
-            <li>Timezone: <span id="tz"></span></li>
-            <li>Language: <span id="lang"></span></li>
-            <li>LocalStorage ใช้งานได้: <span id="lsok">--</span></li>
-          </ul>
-        </div>
-      </aside>
-    </main>
-
-    <footer>
-      © 2025 SUKOL T-TIME — Web Alarm • ต้องอนุญาต Notification & Allow Location เพื่อฟีเจอร์เต็มรูปแบบ
-    </footer>
-
-    <!-- audio elements -->
-    <audio id="sound-beep" src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAESsAACJWAAACABAAZGF0YQAAAAA="></audio>
-    <!-- (short placeholder beep; you can replace with external URLs) -->
-    <audio id="sound-chime" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"></audio>
-    <audio id="sound-alarm" src="https://actions.google.com/sounds/v1/alarms/digital_watch_alarm_long.ogg"></audio>
-
+  <div class="love-box">
+    <h2>My Dearest Fern & Jess</h2>
+    <p>
+      Through every laugh, every tear, and every fight, our love has only grown stronger.  
+      We may have faced storms, but we always find our way back to each other.  
+      Every single day with you is a reminder that true love isn’t about perfection —  
+      it’s about holding on, growing together, and never giving up. 💫
+    </p>
+    <p>
+      Four months may not seem long to the world, but to us, it’s everything.  
+      Thank you for loving me through the ups and downs, for every smile, every moment,  
+      and every heartbeat that makes our love real. I love you deeply, more than words could ever say. 🫶
+    </p>
+    <div class="heart">❤️</div>
+    <button onclick="showMessage()">💌 Press for a little surprise 💌</button>
   </div>
 
-<script>
-/* SUKOL T-TIME — Web Alarm JS
-   - alarms stored in localStorage under key 'sukol_alarms'
-   - alarm object: {id, time: "HH:MM", label, repeat: [0..6], enabled:true, sound, snoozeMin}
-*/
+  <footer>
+    Forever yours, with all my love 🕊️<br>
+    — Fern & Jess 💞
+  </footer>
 
-(() => {
-  // Utils
-  const $ = sel => document.querySelector(sel);
-  const $$ = sel => Array.from(document.querySelectorAll(sel));
-  const LS_KEY = 'sukol_alarms_v1';
-
-  // Elements
-  const clockDisplay = $('#clockDisplay');
-  const dateDisplay = $('#dateDisplay');
-  const batteryDisplay = $('#batteryDisplay');
-  const alarmForm = $('#alarmForm');
-  const alarmTime = $('#alarmTime');
-  const alarmLabel = $('#alarmLabel');
-  const repeatDays = $('#repeatDays');
-  const snoozeMinutes = $('#snoozeMinutes');
-  const soundSelect = $('#soundSelect');
-  const alarmsList = $('#alarmsList');
-  const requestPermBtn = $('#requestPermBtn');
-  const toggleDark = $('#toggleDark');
-  const modeLabel = $('#modeLabel');
-  const tzEl = $('#tz');
-  const langEl = $('#lang');
-  const lsokEl = $('#lsok');
-  const snoozeAllBtn = $('#snoozeAll');
-  const stopAllBtn = $('#stopAll');
-
-  const audio = {
-    beep: $('#sound-beep'),
-    chime: $('#sound-chime'),
-    alarm: $('#sound-alarm')
-  };
-
-  // state
-  let alarms = [];
-  let checkTimer = null;
-
-  // init
-  function init(){
-    tzEl.textContent = Intl.DateTimeFormat().resolvedOptions().timeZone || 'n/a';
-    langEl.textContent = navigator.language || 'n/a';
-    lsokEl.textContent = (typeof(Storage) !== 'undefined') ? 'Yes' : 'No';
-    modeLabel.textContent = (document.body.classList.contains('dark-mode')) ? 'Dark' : 'Light';
-    loadAlarms();
-    renderAlarms();
-    startClock();
-    startChecker();
-    bindEvents();
-    tryGetBattery();
-    tryGetWeather();
-  }
-
-  // clock
-  function startClock(){
-    updateClock();
-    setInterval(updateClock, 1000);
-  }
-  function updateClock(){
-    const now = new Date();
-    clockDisplay.textContent = now.toLocaleTimeString();
-    dateDisplay.textContent = now.toLocaleDateString();
-  }
-
-  // storage
-  function loadAlarms(){
-    try{
-      const raw = localStorage.getItem(LS_KEY);
-      alarms = raw ? JSON.parse(raw) : [];
-    }catch(e){ alarms = []; }
-  }
-  function saveAlarms(){
-    localStorage.setItem(LS_KEY, JSON.stringify(alarms));
-  }
-
-  // create id
-  function uid(){ return Date.now().toString(36) + Math.random().toString(36).slice(2,6); }
-
-  // handle form submit
-  alarmForm.addEventListener('submit', e=>{
-    e.preventDefault();
-    const time = alarmTime.value;
-    if(!time){ alert('กรุณาเลือกเวลา'); return; }
-    const label = alarmLabel.value.trim() || 'Alarm';
-    const sound = soundSelect.value || 'alarm';
-    const snooze = parseInt(snoozeMinutes.value) || 5;
-    const repeat = Array.from(repeatDays.selectedOptions).map(o => parseInt(o.value));
-    const obj = { id: uid(), time, label, repeat, enabled:true, sound, snoozeMin: snooze };
-    alarms.push(obj);
-    saveAlarms();
-    renderAlarms();
-    alarmForm.reset();
-    // UX: keep default snooze
-    snoozeMinutes.value = 5;
-  });
-
-  // render alarms list
-  function renderAlarms(){
-    alarmsList.innerHTML = '';
-    if(alarms.length === 0){
-      alarmsList.innerHTML = '<div class="small" style="color:var(--muted)">ยังไม่มีปลุกที่ตั้งไว้</div>';
-      return;
+  <script>
+    function showMessage() {
+      const messages = [
+        "You’re my everything, no matter how hard things get 🫶",
+        "Every fight only proves how much we care and love each other 💕",
+        "Thank you for staying, for loving, for believing in us ✨",
+        "You and I, always and forever 💖",
+        "Even the stars can’t outshine the love I have for you 🌟"
+      ];
+      const random = messages[Math.floor(Math.random() * messages.length)];
+      alert(random);
     }
-    alarms.forEach(a=>{
-      const item = document.createElement('div'); item.className='alarm-item';
-      const left = document.createElement('div'); left.className='alarm-left';
-      const tb = document.createElement('div'); tb.innerHTML = `<div class="time-badge">${a.time}</div><div class="meta">${a.label} ${a.repeat && a.repeat.length? '• ซ้ำ: '+a.repeat.map(d=>['อา','จ','อ','พ','พฤ','ศ','ส'][d]).join(', '):''}</div>`;
-      left.appendChild(tb);
-      const right = document.createElement('div'); right.style.display='flex'; right.style.alignItems='center'; right.style.gap='8px';
-
-      const toggle = document.createElement('input'); toggle.type='checkbox'; toggle.className='switch'; toggle.checked = !!a.enabled;
-      toggle.addEventListener('change', () => { a.enabled = toggle.checked; saveAlarms(); renderAlarms(); });
-
-      const editBtn = document.createElement('button'); editBtn.className='btn-ghost'; editBtn.textContent='แก้ไข';
-      editBtn.addEventListener('click', ()=> openEdit(a.id));
-
-      const delBtn = document.createElement('button'); delBtn.className='btn-ghost'; delBtn.textContent='ลบ';
-      delBtn.addEventListener('click', ()=> { if(confirm('ลบปลุกนี้?')){ alarms = alarms.filter(x=>x.id!==a.id); saveAlarms(); renderAlarms(); }});
-
-      right.appendChild(toggle); right.appendChild(editBtn); right.appendChild(delBtn);
-      item.appendChild(left); item.appendChild(right);
-      alarmsList.appendChild(item);
-    });
-  }
-
-  function openEdit(id){
-    const a = alarms.find(x=>x.id===id);
-    if(!a) return alert('ไม่พบปลุก');
-    // prefill form then remove original
-    alarmTime.value = a.time;
-    alarmLabel.value = a.label;
-    snoozeMinutes.value = a.snoozeMin || 5;
-    soundSelect.value = a.sound || 'alarm';
-    // set repeat select
-    Array.from(repeatDays.options).forEach(opt => opt.selected = a.repeat && a.repeat.includes(parseInt(opt.value)));
-    // remove original
-    alarms = alarms.filter(x=>x.id!==id);
-    saveAlarms();
-    renderAlarms();
-  }
-
-  // checker — runs every second to find alarms due
-  function startChecker(){
-    if(checkTimer) clearInterval(checkTimer);
-    checkTimer = setInterval(checkAlarms, 1000);
-    checkAlarms(); // immediate
-  }
-
-  function checkAlarms(){
-    const now = new Date();
-    const hhmm = now.toTimeString().slice(0,5); // "HH:MM"
-    const weekday = now.getDay(); // 0..6
-    alarms.forEach(a=>{
-      if(!a.enabled) return;
-      // if repeat array empty -> single use alarm at same day/time — we need a firedAt timestamp to avoid repeated triggers during that minute
-      // we'll store lastFired to prevent repeat triggers in same minute
-      if(a.lastFired && Math.abs(Date.now() - a.lastFired) < 55*1000) return; // already fired within last 55s
-      // check repeat vs single
-      if(a.repeat && a.repeat.length){
-        if(a.repeat.includes(weekday) && a.time === hhmm){
-          triggerAlarm(a);
-        }
-      } else {
-        // single: only trigger if date matches and not fired before
-        // we treat single as recurring only for exact time once; we mark lastFired so it won't re-fire
-        if(a.time === hhmm){
-          triggerAlarm(a);
-        }
-      }
-    });
-  }
-
-  // trigger alarm action
-  function triggerAlarm(alarm){
-    alarm.lastFired = Date.now();
-    saveAlarms();
-
-    // show notification
-    notifyTitle = alarm.label || 'SUKOL T-TIME';
-    const body = `ปลุก ${alarm.time}`;
-    showNotification(notifyTitle, body);
-
-    // vibration
-    if(navigator.vibrate) navigator.vibrate([300,150,300]);
-
-    // play sound
-    playSound(alarm.sound);
-
-    // visual focus
-    modeLabel.textContent = `Alarm: ${alarm.time}`;
-
-    // show simple alarm dialog in page
-    showAlarmDialog(alarm);
-  }
-
-  // sound
-  function playSound(key){
-    try{
-      const a = audio[key] || audio.alarm;
-      if(!a) return;
-      a.currentTime = 0;
-      a.play().catch(()=>{ /* autoplay policy might block until user interacts */ });
-    }catch(e){}
-  }
-
-  // Notification wrapper
-  async function requestNotificationPermission(){
-    if(!('Notification' in window)) return alert('เบราว์เซอร์คุณไม่รองรับ Notification API');
-    if(Notification.permission === 'granted') return true;
-    const perm = await Notification.requestPermission();
-    return perm === 'granted';
-  }
-
-  function showNotification(title, body){
-    if(Notification.permission === 'granted'){
-      const opt = { body, renotify: true, tag: 'sukol-alarm', vibrate:[200,100,200] };
-      try{
-        navigator.serviceWorker?.getRegistration().then(reg => {
-          if(reg) reg.showNotification(title, opt);
-          else new Notification(title, opt);
-        });
-      }catch(e){
-        try{ new Notification(title, opt); }catch(e){}
-      }
-    } else {
-      // fallback alert
-      alert(`${title}\n${body}`);
-    }
-  }
-
-  // small modal / dialog style using confirm for simplicity
-  function showAlarmDialog(alarm){
-    const action = confirm(`ปลุก: ${alarm.label}\nเวลา: ${alarm.time}\n\nเลือก OK เพื่อ Snooze (${alarm.snoozeMin} นาที) หรือ Cancel เพื่อปิด`);
-    if(action){
-      // snooze
-      const snoozeMs = (alarm.snoozeMin || 5) * 60 * 1000;
-      setTimeout(()=> triggerAlarm(alarm), snoozeMs);
-    } else {
-      // stop: for single alarms disable; for repeating keep enabled but mark lastFired to avoid repeat
-      alarm.lastFired = Date.now();
-      saveAlarms();
-    }
-  }
-
-  // quick actions
-  snoozeAllBtn.addEventListener('click', ()=>{
-    const mins = 5;
-    alarms.forEach(a => setTimeout(()=> triggerAlarm(a), mins*60*1000));
-    alert(`Snooze ทุกปลุกอีก ${mins} นาที (ทดสอบ)`);
-  });
-  stopAllBtn.addEventListener('click', ()=>{
-    if(confirm('หยุดทุกปลุก (จะ mark lastFired) ?')){
-      alarms.forEach(a=>{ a.lastFired = Date.now(); });
-      saveAlarms();
-      renderAlarms();
-      alert('หยุดเรียบร้อย');
-    }
-  });
-
-  // get battery status
-  function tryGetBattery(){
-    if(navigator.getBattery){
-      navigator.getBattery().then(bat=>{
-        batteryDisplay.textContent = `${Math.round(bat.level*100)}%`;
-        bat.addEventListener('levelchange', ()=> batteryDisplay.textContent = `${Math.round(bat.level*100)}%`);
-      });
-    }else batteryDisplay.textContent='n/a';
-  }
-
-  // weather (basic OpenWeatherMap by coordinate) — requires API key
-  function tryGetWeather(){
-    if(!navigator.geolocation) { $('#weatherInfo').textContent = 'ตำแหน่งไม่พร้อมใช้งาน'; return; }
-    navigator.geolocation.getCurrentPosition(async pos=>{
-      const lat = pos.coords.latitude, lon = pos.coords.longitude;
-      const API_KEY = 'e5969f857a9a462f28ff17e9bb4aca1f';
-      if(!API_KEY){ $('#weatherInfo').textContent = 'e5969f857a9a462f28ff17e9bb4aca1f'; return; }
-      try{
-        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=th&appid=${API_KEY}`);
-        const j = await res.json();
-        $('#weatherInfo').textContent = `${j.weather[0].description}, ${j.main.temp}°C • ${j.name||''}`;
-      }catch(e){ $('#weatherInfo').textContent='ไม่สามารถโหลดสภาพอากาศ'; }
-    }, err=>{ $('#weatherInfo').textContent='ไม่ได้รับสิทธิ์ตำแหน่ง'; });
-  }
-
-  // event bindings
-  function bindEvents(){
-    requestPermBtn.addEventListener('click', async ()=> {
-      const ok = await requestNotificationPermission();
-      alert(ok ? 'ได้รับสิทธิ์แจ้งเตือนแล้ว' : 'ยังไม่ได้สิทธิ์แจ้งเตือน');
-    });
-
-    toggleDark.addEventListener('click', ()=>{
-      document.body.classList.toggle('dark-mode');
-      modeLabel.textContent = document.body.classList.contains('dark-mode') ? 'Dark' : 'Light';
-    });
-
-    $('#clearForm').addEventListener('click', ()=> { alarmForm.reset(); });
-
-    // register service worker for better notification behavior if available
-    if('serviceWorker' in navigator){
-      try{
-        navigator.serviceWorker.register('./').catch(()=>{/* ignore if fails */});
-      }catch(e){}
-    }
-  }
-
-  // init run
-  init();
-      // event bindings
-    function bindEvents(){
-      requestPermBtn.addEventListener('click', async ()=> {
-        const ok = await requestNotificationPermission();
-        alert(ok ? 'ได้รับสิทธิ์แจ้งเตือนแล้ว' : 'ยังไม่ได้สิทธิ์แจ้งเตือน');
-      });
-
-      toggleDark.addEventListener('click', ()=>{
-        document.body.classList.toggle('dark-mode');
-        modeLabel.textContent = document.body.classList.contains('dark-mode') ? 'Dark' : 'Light';
-      });
-
-      $('#clearForm').addEventListener('click', ()=> alarmForm.reset());
-    }
-
-    // เริ่มต้นระบบ
-    document.addEventListener('DOMContentLoaded', init);
-  })();
-
-
-
-</script>
+  </script>
 </body>
 </html>
